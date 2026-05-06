@@ -126,6 +126,33 @@ Tick each box as you complete the setup.
 
 ---
 
+## 📅 11. Project Setup Timeline
+
+### **Day 1 — AWS Infrastructure Setup**
+- Created IAM user for programmatic access  
+- Created S3 buckets (`automation-flyers`, `automation-clips`)  
+- Created shared Lambda execution role (`automation-lambda-role`)  
+- Created 7 Lambda microservices  
+- Attached correct IAM role to all Lambdas  
+- Created EventBridge daily/weekly/monthly schedules  
+- Linked all schedules to `scheduler-agent`  
+- Added AWS configuration to `.env`  
+- Initialized GitHub repository  
+
+### **Day 2 — Google Cloud Setup (Upcoming)**
+- Google Cloud project  
+- Drive API  
+- YouTube API  
+- OAuth credentials  
+- Service accounts  
+- Drive webhook  
+
+### **Day 3 — Stripe Setup (Upcoming)**
+- Webhook endpoint  
+- Payment event handling  
+- Invoice reminders  
+
+
 ## 🚀 Next Steps
 
 Once all items are checked:

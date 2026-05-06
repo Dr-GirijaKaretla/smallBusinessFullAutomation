@@ -1,0 +1,34 @@
+                   ┌──────────────────────────┐
+                   │      Google Drive        │
+                   │ (Photos & Videos Upload) │
+                   └──────────────┬───────────┘
+                                  │ Webhook
+                                  ▼
+                      ┌──────────────────────┐
+                      │      API Layer       │
+                      │  (Drive Webhook)     │
+                      └──────────┬───────────┘
+                                 │
+                                 ▼
+                   ┌────────────────────────────┐
+                   │     Multi-Agent System      │
+                   │                              │
+                   │  • Flyer Agent               │
+                   │  • Video Clip Agent          │
+                   │  • Website Agent             │
+                   │  • Payment Agent             │
+                   │  • Scheduler Agent           │
+                   └──────────┬──────────────────┘
+                              │
+        ┌─────────────────────┼──────────────────────────────┐
+        ▼                     ▼                              ▼
+┌──────────────┐     ┌────────────────┐            ┌──────────────────┐
+│  AWS S3       │     │ Social Media   │            │ Stripe Payments   │
+│ (Flyers/Clips)│     │ IG/FB/YouTube │            │ Webhooks/Events   │
+└──────────────┘     └────────────────┘            └──────────────────┘
+        │
+        ▼
+┌────────────────────┐
+│  Frontend Website   │
+│ (Vercel/Amplify)    │
+└────────────────────┘

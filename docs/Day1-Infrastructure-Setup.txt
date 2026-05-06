@@ -1,0 +1,83 @@
+# Automation Platform — Infrastructure Setup Report
+Prepared by: Dr. Girija  
+Date: 07 May 2026  
+Version: 1.0  
+
+---
+
+## Executive Summary
+
+This document outlines the Day‑1 setup of the Automation Platform’s AWS infrastructure.  
+The system is designed as a modular, serverless, event‑driven architecture capable of automating media generation, notifications, payment workflows, and content updates.
+
+---
+
+## 1. AWS Identity & Access Management
+
+A dedicated IAM user was created with programmatic access.  
+Credentials were securely stored in `.env` for use by backend scripts and CI/CD pipelines.
+
+A shared Lambda execution role (`automation-lambda-role`) was created with the following policies:
+
+- AWSLambdaBasicExecutionRole  
+- AmazonS3FullAccess  
+- CloudWatchFullAccess  
+
+This role is used by all Lambda functions.
+
+---
+
+## 2. Storage Layer (S3)
+
+Two S3 buckets were created:
+
+- automation-flyers  
+- automation-clips  
+
+These buckets store all generated media assets.
+
+---
+
+## 3. Compute Layer (AWS Lambda)
+
+Seven Lambda functions were created to form the microservice architecture:
+
+- flyer-agent  
+- video-agent  
+- website-agent  
+- payment-agent  
+- scheduler-agent  
+- drive-webhook-handler  
+- stripe-webhook-handler  
+
+All functions use the shared execution role.
+
+---
+
+## 4. Event Scheduling (EventBridge)
+
+Three recurring schedules were created:
+
+- Daily (8 AM)  
+- Weekly (Monday 9 AM)  
+- Monthly (1st of month, 7 AM)  
+
+All schedules target the `scheduler-agent` Lambda.
+
+---
+
+## 5. Repository Setup
+
+A GitHub repository was initialized with:
+
+- /docs folder  
+- .env.example  
+- Architecture documentation  
+- Project timeline  
+
+---
+
+## Conclusion
+
+Day‑1 successfully established the complete AWS foundation for the Automation Platform.  
+The system is now ready for Day‑2 Google Cloud integration and Day‑3 Stripe integration.
